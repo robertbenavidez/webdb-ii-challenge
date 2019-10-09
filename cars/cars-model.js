@@ -20,9 +20,9 @@ function getById(id) {
       .first();
   }
 
-  function insert(car) {
+  function insert(carData) {
     return db('cars')
-    .insert(car)
+    .insert(carData)
     .then(ids => {
         return getById(ids[0]);
     })
@@ -35,7 +35,7 @@ function getById(id) {
   }
 
   function remove(id) {
-      return db('car')
+      return db('cars')
       .where('id', id)
       .del();
   }
